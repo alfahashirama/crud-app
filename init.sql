@@ -1,0 +1,11 @@
+CREATE DATABASE IF NOT EXISTS user_manager;
+USE user_manager;
+
+CREATE TABLE IF NOT EXISTS users (
+  id CHAR(36) PRIMARY KEY DEFAULT (UUID()),
+  name VARCHAR(100) NOT NULL,
+  email VARCHAR(100) NOT NULL
+);
+
+GRANT ALL PRIVILEGES ON user_manager.* TO 'alfa'@'%';
+FLUSH PRIVILEGES;
